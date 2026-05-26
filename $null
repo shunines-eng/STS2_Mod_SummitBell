@@ -1,0 +1,14 @@
+使用“0”个参数调用“GetResponse”时发生异常:“对路径“c:\”的访问被拒绝。”
+所在位置 行:1 字符: 5
++ & { $res = [System.IO.StreamReader]::new(([System.Net.HttpWebRequest] ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+不能对 Null 值表达式调用方法。
+所在位置 行:1 字符: 128
++ ... 'file:///').GetResponse()).GetResponseStream()); $res.Close() } ; $pc ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) []，RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+ 

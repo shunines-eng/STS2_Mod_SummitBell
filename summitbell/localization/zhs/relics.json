@@ -1,0 +1,10 @@
+{
+  "SUMMITBELL-TEST_RELIC.title": "测试遗物",
+  "SUMMITBELL-TEST_RELIC.description": "每回合开始时，抽[blue]{Cards}[/blue]张牌。",
+  "SUMMITBELL-TEST_RELIC.flavor": "觉得很眼熟？",
+
+  "SUMMITBELL-TEST_RELIC_UPGRADE.title":"测试遗物plus",
+  "SUMMITBELL-TEST_RELIC_UPGRADE.description": "每回合开始时，抽[blue]{Cards}[/blue]张牌。",
+  "SUMMITBELL-TEST_RELIC_UPGRADE": "似乎变强了？"
+
+}

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://da8vdmupmv11j"]
+
+[node name="TestBg" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.3520002
+anchor_bottom = 2.319
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 0.002105713
+offset_bottom = 0.0075149536

@@ -1,0 +1,17 @@
+{
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.aromaPrinciple": "[sine][blue]……等待……[/blue][/sine]",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.banter.alive.endTurnPing": "……",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.banter.dead.endTurnPing": "……",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.cardsModifierDescription": "戈多的卡牌现在会出现在奖励和商店中。",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.cardsModifierTitle": "戈多卡牌",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.description": "一个在无尽等待中的存在。\n时间对[gold]戈多[/gold]而言，不过是另一种形式的永恒。",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.eventDeathPrevention": "我还得继续等下去……",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.goldMonologue": "[sine]这些金币……也许能派上用场……[/sine]",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.possessiveAdjective": "他的",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.pronounObject": "他",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.pronounPossessive": "他的",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.pronounSubject": "他",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.title": "戈多",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.titleObject": "戈多",
+  "SUMMITBELL-SUMMIT_BELL_CHARACTER.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+}

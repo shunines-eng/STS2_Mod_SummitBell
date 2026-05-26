@@ -1,0 +1,29 @@
+{
+    "SUMMITBELL-TEST_CARD.title": "角色专属牌",
+    "SUMMITBELL-TEST_CARD.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-TEST_CARD2.title": "打击",
+    "SUMMITBELL-TEST_CARD2.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-TEST_CARD3.title": "测试卡牌3",
+    "SUMMITBELL-TEST_CARD3.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-TEST_CARD4.title": "测试卡牌4",
+    "SUMMITBELL-TEST_CARD4.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-ANOTHER_I_TRANSCENDENCE.title": " 其他先古",
+    "SUMMITBELL-ANOTHER_I_TRANSCENDENCE.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-TEST_CARD_I_TRANSCENDENCE.title": "先古之牙升级",
+    "SUMMITBELL-TEST_CARD_I_TRANSCENDENCE.description": "造成{Damage:diff()}点伤害。",
+
+    "SUMMITBELL-ECHO_DEFEND.title": "防御",
+    "SUMMITBELL-ECHO_DEFEND.description": "造成{Block:diff()}点防御。",
+
+    "SUMMITBELL-BLOSSOM_BARRAGE.title": "花舞",
+    "SUMMITBELL-BLOSSOM_BARRAGE.description": "造成{Damage:diff()}点伤害3次,抽1张牌",
+
+    "SUMMITBELL-VALE_ECHO.title": "空谷回响",
+    "SUMMITBELL-VALE_ECHO.description": "对自身造成1点虚弱，1点易伤。对所有敌人造成{EnemyWeak}点虚弱，造成{EnemyVulnerable}点易伤，并失去1点力量。"
+
+}
