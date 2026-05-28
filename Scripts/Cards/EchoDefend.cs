@@ -47,7 +47,7 @@ public class EchoDefend : CustomCardModel
         await CreatureCmd.GainBlock(
             ((CardModel)(object)this).Owner.Creature,  // 目标：当前卡牌所有者
             ((CardModel)(object)this).DynamicVars.Block.BaseValue,  // 格挡值：14
-            ValueProp.Move,  // 价值属性：移动
+            ValueProp.Move,  // 价值属性：可变
             cardPlay
         );
     }

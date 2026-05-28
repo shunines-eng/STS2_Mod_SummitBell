@@ -1,6 +1,17 @@
 # 山铃花之诗（sts2 ver.0.103.4）
 ## 卡牌思路
- 暂无
+ 我的设计希望能围绕3个风格进行实现，
+### “友谊”  
+一部分角色卡可以很容易的调用其他职业的卡，并且其本身可以很好的兼容所有职业的特殊效果，例如：灾厄和中毒会可能被一张卡统一成某种直接伤害，自身的卡种本身具有获取星辉、召唤奥斯提等其他角色专属特点的卡
+### “共鸣”
+其一部分角色卡会对敌我双方都造成正负面的效果，例如我设计的一张卡：“空谷回响”
+// 卡名:{空谷回响}
+// 效果:{对自身造成1点虚弱,1点易伤,对全体敌方造成5点易伤,5点虚弱,敌方失去1点力量}
+// 类型:{技能}
+就是一张对双方都具有负面效果，但总体来说是对角色具有更大的正面效果的卡。后面还可以设计出负面效果延时生效，或者类似一代的人工制品的效果的卡来将负面收益转正
+### “生长”  
+具有一些永久的全局成长牌，这些牌在初期的效果比均值低，成长速度适中，且具有：“成长”词缀，具有这个词缀的卡片会被一些卡牌激活并产生一些效果。例如：破岩胚芽，2费，造成6点伤害，生长：增加2点伤害
+具有一些局内达成某个回合生效的卡牌，这些牌一般是固有的。例如：孕育果实：3回合后回复6点生命
 ##  mod学习
 ### 项目基础内容
 本mod使用BaseLib作为框架辅助开发，学习阶段跟随教程**https://tutorials.sts2modding.com/docs/** 开发。感谢所有先行者的努力付出!
@@ -138,18 +149,18 @@ public class TestCard : CustomCardModel ,ITranscendenceCard
 以对所有敌人施加虚弱、易伤、降力为例子  
 
 ```c#
-		foreach (Creature enemy in base.CombatState.HittableEnemies)
-		{
-			await PowerCmd.Apply<VulnerablePower>(ctx,enemy, enemyVulnerable, base.Owner.Creature, this);
-            await PowerCmd.Apply<WeakPower>(ctx,enemy, enemyWeak, base.Owner.Creature, this);
-            await PowerCmd.Apply<StrengthPower>(ctx,enemy, selfStrength, base.Owner.Creature, this);
-        }
+    foreach (Creature enemy in base.CombatState.HittableEnemies)
+    {
+        await PowerCmd.Apply<VulnerablePower>(ctx,enemy, enemyVulnerable, base.Owner.Creature, this);
+        await PowerCmd.Apply<WeakPower>(ctx,enemy, enemyWeak, base.Owner.Creature, this);
+        await PowerCmd.Apply<StrengthPower>(ctx,enemy, selfStrength, base.Owner.Creature, this);
+    }
 ```
->     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
+> protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay cardPlay)
 这一句在测试服是这样写的，正式服（v.103）要把ctx去掉，建议是在观察源码时尽可能的查看你写的那个版本的sts2.dll  
 
 7. 教程没有提供效果类的json翻译格式。我解决的方式是这样的。
-> 随意加一个{}进入你的描述，看日志报错，报错时会顺带告诉你你可以获取到的数值对应的效果。依据这个效果回到代码查看，发现是DynamicVar里面自己的命名直接调用，不加diff()即可，不过这样似乎没有特效了，我以后看看是什么问题  
+> 随意加一个{ }，加diff()会让变化了数值的参数变色，不过这样似乎没有特效了，我以后看看是什么问题  
 以我设计的空谷回响([空谷回响](Scripts/Cards/ValeEcho​.cs))为例子
 ```c# 
    protected override IEnumerable<DynamicVar> CanonicalVars => [
