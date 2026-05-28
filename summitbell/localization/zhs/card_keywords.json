@@ -1,5 +1,8 @@
 {
 "SUMMITBELL-GROW.title": "生长",
-"SUMMITBELL-GROW.description": ""
+"SUMMITBELL-GROW.description": "具有培育词条的卡牌被打出时，触发此卡牌的强化效果",
+
+"SUMMITBELL-CULTIVATE.title": "培育",
+"SUMMITBELL-CULTIVATE.description": "词条后的数值代表培育的次数，打出此卡时触发具有生长词条的强化效果"
 
 }

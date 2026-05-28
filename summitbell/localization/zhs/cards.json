@@ -24,6 +24,13 @@
     "SUMMITBELL-BLOSSOM_BARRAGE.description": "造成{Damage:diff()}点伤害3次,抽1张牌",
 
     "SUMMITBELL-VALE_ECHO.title": "空谷回响",
-    "SUMMITBELL-VALE_ECHO.description": "对自身造成1点虚弱，1点易伤。对所有敌人造成{EnemyWeak}点虚弱，造成{EnemyVulnerable}点易伤，并失去1点力量。"
+    "SUMMITBELL-VALE_ECHO.description": "对自身造成1点虚弱，1点易伤。对所有敌人造成{EnemyWeak}点虚弱，造成{EnemyVulnerable}点易伤，并失去1点力量。",
 
+    "SUMMITBELL-EMERGENCE_FORCE.title": "破土伟力",
+    "SUMMITBELL-EMERGENCE_FORCE.description": "造成{Damage:diff()}点伤害。每培育1次额外造成2点伤害",
+
+    "SUMMITBELL-WATER.title": "浇筑",
+    "SUMMITBELL-WATER.description": "获得{Block:diff()}点格挡。浇筑1"
+    
+    
 }
