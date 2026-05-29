@@ -4,6 +4,5 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 public interface IGrowableCard
 {
-    // 当被培育触发时调用
-    Task OnCultivateTriggered(PlayerChoiceContext ctx, CardPlay originalCardPlay);
+    Task OnCultivateTriggered(PlayerChoiceContext ctx);
 }

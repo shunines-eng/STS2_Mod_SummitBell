@@ -7,48 +7,51 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using Summitbell.Scripts.KeyWords;
 using Summitbell.Scripts.Pools;
 
 namespace Summitbell.Scripts.Cards;
 
 // 注册卡牌。如果要写自定义池看添加人物的开头
 [Pool(typeof(SummitBellCardPool))]
-public class TestCard4 : CustomCardModel
+public class BottledSunshine​ : CustomCardModel, IGrowableCard
 {
     // 基础耗能
     private const int energyCost = 1;
     // 卡牌类型
-    private const CardType type = CardType.Attack;
+    private const CardType type = CardType.Skill;
     // 卡牌稀有度
     private const CardRarity rarity = CardRarity.Common;
     // 目标类型（AnyEnemy表示任意敌人）
-    private const TargetType targetType = TargetType.AnyEnemy;
+    private const TargetType targetType = TargetType.None;
     // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
 
-    // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Move)];
-
+    // 1点能量
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [SummitBellKeyWords.Grow];
 // 添加这一行，指定卡牌立绘路径
     public override string PortraitPath => $"res://summitbell/images/cards/{nameof(TestCard)}.png";
 
-    public TestCard4() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    public BottledSunshine​() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
-            .FromCard(this) // 伤害来源于这张卡牌
-            .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
-            .Execute(choiceContext);
+        await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner); //回复能量
     }
 
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4); // 升级后增加4点伤害
+       AddKeyword(CardKeyword.Innate);
     }
 
+    public async Task OnCultivateTriggered(PlayerChoiceContext ctx)
+    {
+        // 生长效果：增加1点能量
+        DynamicVars.Energy.BaseValue += 1;
+    }
 }

@@ -8,3 +8,6 @@ dotnet_diagnostic.IDE0058.severity = none
 
 # CS8604: 引用类型参数可能为 null。
 dotnet_diagnostic.CS8604.severity = none
+
+# CS8602: 解引用可能出现空引用。
+dotnet_diagnostic.CS8602.severity = none

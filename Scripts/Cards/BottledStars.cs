@@ -7,50 +7,69 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using Summitbell.Scripts.KeyWords;
 using Summitbell.Scripts.Pools;
 
 namespace Summitbell.Scripts.Cards;
 
-// 注册卡牌。如果要写自定义池看添加人物的开头
+// 卡名:{瓶装星尘}
+// 效果:{造成6（8）点伤害1次，生长：额外造成1次伤害}
+// 类型:{}
+// 牌效偏向:{}
+
 [Pool(typeof(SummitBellCardPool))]
-public class TestCard3 : CustomCardModel 
+public class BottledStars : CustomCardModel, IGrowableCard
 {
     // 基础耗能
     private const int energyCost = 1;
     // 卡牌类型
     private const CardType type = CardType.Attack;
     // 卡牌稀有度
-    private const CardRarity rarity = CardRarity.Rare;
+    private const CardRarity rarity = CardRarity.Uncommon;
     // 目标类型（AnyEnemy表示任意敌人）
     private const TargetType targetType = TargetType.AnyEnemy;
     // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [SummitBellKeyWords.Grow];
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [		
+        new DamageVar(3m, ValueProp.Move),
+		new RepeatVar(3)
+    ];
 
 // 添加这一行，指定卡牌立绘路径
     public override string PortraitPath => $"res://summitbell/images/cards/{nameof(TestCard)}.png";
 
-    public TestCard3() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    public BottledStars() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .WithHitCount(DynamicVars.Repeat.IntValue) // 造成伤害，数值来源于卡牌的基础伤害属性
             .FromCard(this) // 伤害来源于这张卡牌
             .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
             .Execute(choiceContext);
+
+            // 		await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            // .WithHitCount(DynamicVars.Repeat.IntValue)
+            // .FromCard(this)
+            // .TargetingRandomOpponents(CombatState)
     }
 
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4); // 升级后增加4点伤害
+        DynamicVars.Damage.UpgradeValueBy(2); // 升级后增加4点伤害
     }
 
-
+        public async Task OnCultivateTriggered(PlayerChoiceContext ctx)
+    {
+        // 生长效果：增加1次伤害
+        DynamicVars.Repeat.BaseValue += 1;
+    }
 
 }

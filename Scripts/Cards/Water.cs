@@ -7,14 +7,11 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
-
-namespace Summitbell.Scripts.Cards;
-
 using System.Runtime.CompilerServices;
 using Summitbell.Scripts.KeyWords;
 using Summitbell.Scripts.Pools;
 
-
+namespace Summitbell.Scripts.Cards;
 
 [Pool(typeof(SummitBellCardPool))]
 // 浇筑 - 培育卡牌示例
@@ -69,7 +66,7 @@ public class Water : CustomCardModel
         // 触发每张生长卡牌的自身效果
         foreach (var growableCard in growableCards)
         {
-            await growableCard.OnCultivateTriggered(ctx, originalCardPlay);
+            await growableCard.OnCultivateTriggered(ctx);
             triggeredCount++;
         }
         

@@ -2,14 +2,14 @@
     "SUMMITBELL-TEST_CARD.title": "角色专属牌",
     "SUMMITBELL-TEST_CARD.description": "造成{Damage:diff()}点伤害。",
 
-    "SUMMITBELL-TEST_CARD2.title": "打击",
-    "SUMMITBELL-TEST_CARD2.description": "造成{Damage:diff()}点伤害。",
+    "SUMMITBELL-ECHO_STRIKE.title": "打击",
+    "SUMMITBELL-ECHO_STRIKE.description": "造成{Damage:diff()}点伤害。",
 
-    "SUMMITBELL-TEST_CARD3.title": "测试卡牌3",
-    "SUMMITBELL-TEST_CARD3.description": "造成{Damage:diff()}点伤害。",
+    "SUMMITBELL-BOTTLED_SUNSHINE.title": "瓶装阳光",
+    "SUMMITBELL-BOTTLED_SUNSHINE.description": "获得{Energy:diff()}点能量。每次生长额外获得1能量",
 
-    "SUMMITBELL-TEST_CARD4.title": "测试卡牌4",
-    "SUMMITBELL-TEST_CARD4.description": "造成{Damage:diff()}点伤害。",
+    "SUMMITBELL-BOTTLED_STARS.title": "瓶装星尘",
+    "SUMMITBELL-BOTTLED_STARS.description": "造成{Damage:diff()}点伤害{Repeat:diff()}次。每次生长额外造成1次伤害。",
 
     "SUMMITBELL-ANOTHER_I_TRANSCENDENCE.title": " 其他先古",
     "SUMMITBELL-ANOTHER_I_TRANSCENDENCE.description": "造成{Damage:diff()}点伤害。",
@@ -24,13 +24,16 @@
     "SUMMITBELL-BLOSSOM_BARRAGE.description": "造成{Damage:diff()}点伤害3次,抽1张牌",
 
     "SUMMITBELL-VALE_ECHO.title": "空谷回响",
-    "SUMMITBELL-VALE_ECHO.description": "对自身造成1点虚弱，1点易伤。对所有敌人造成{EnemyWeak}点虚弱，造成{EnemyVulnerable}点易伤，并失去1点力量。",
+    "SUMMITBELL-VALE_ECHO.description": "对自身造成1点虚弱,1点易伤。对所有敌人造成{EnemyWeak}点虚弱，造成{EnemyVulnerable}点易伤，并失去1点力量。",
 
     "SUMMITBELL-EMERGENCE_FORCE.title": "破土伟力",
     "SUMMITBELL-EMERGENCE_FORCE.description": "造成{Damage:diff()}点伤害。每培育1次额外造成2点伤害",
 
     "SUMMITBELL-WATER.title": "浇筑",
-    "SUMMITBELL-WATER.description": "获得{Block:diff()}点格挡。浇筑1"
-    
-    
+    "SUMMITBELL-WATER.description": "获得{Block:diff()}点格挡。浇筑1",
+
+    "SUMMITBELL-ENDLESS_RUNING.title": "星夜兼程",
+    "SUMMITBELL-ENDLESS_RUNING.description": "获得1层培育形态。"
+
+
 }

@@ -51,12 +51,10 @@ public class EmergenceForce : CustomCardModel, IGrowableCard
     }
 
     // 实现IGrowableCard接口 - 当被培育触发时
-    public async Task OnCultivateTriggered(PlayerChoiceContext ctx, CardPlay originalCardPlay)
+    public async Task OnCultivateTriggered(PlayerChoiceContext ctx)
     {
         // 生长效果：增加2点伤害
         DynamicVars.Damage.BaseValue += 2;
-        
-        // 可以在这里添加卡牌特定的视觉效果
-        // 例如：卡牌闪一下光
+
     }
 }

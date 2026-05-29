@@ -13,7 +13,7 @@ namespace Summitbell.Scripts.Cards;
 
 // 注册卡牌。如果要写自定义池看添加人物的开头
 [Pool(typeof(SummitBellCardPool))]
-public class TestCard2 : CustomCardModel
+public class EchoStrike : CustomCardModel
 {
     // 基础耗能
     private const int energyCost = 1;
@@ -25,14 +25,15 @@ public class TestCard2 : CustomCardModel
     private const TargetType targetType = TargetType.AnyEnemy;
     // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(120, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
 
 // 添加这一行，指定卡牌立绘路径
     public override string PortraitPath => $"res://summitbell/images/cards/{nameof(TestCard)}.png";
 
-    public TestCard2() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    public EchoStrike() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 

@@ -85,11 +85,11 @@ public class SummitBellCharacter : PlaceholderCharacterModel
         // 一张专属牌
         ModelDb.Card<TestCard>(),
         // 五打
-        ModelDb.Card<TestCard2>(),
-        ModelDb.Card<TestCard2>(),
-        ModelDb.Card<TestCard2>(),
-        ModelDb.Card<TestCard2>(),
-        ModelDb.Card<TestCard2>(),
+        ModelDb.Card<EchoStrike>(),
+        ModelDb.Card<EchoStrike>(),
+        ModelDb.Card<EchoStrike>(),
+        ModelDb.Card<EchoStrike>(),
+        ModelDb.Card<EchoStrike>(),
         // 五防
         ModelDb.Card<EchoDefend>(),
         ModelDb.Card<EchoDefend>(),
